@@ -24,6 +24,9 @@ same_day_strategy = list()
 next_close_delta = list()
 next_close_delta.append(0) #no change for the first day
 
+#new column - binary values denoting if the same_day_delta is negative or positive
+next_close_strategy = list()
+
 #walk through all the Dates to extract the day's name
 for date in df["Date"]:
     day_of_week.append(parser.parse(date).strftime("%a"))
@@ -52,13 +55,24 @@ df["next_close_delta"] = next_close_delta
 
 #walk through all the same_day_delta values to check if they are positive or not
 for delta in df["same_day_delta"]:
-    if delta<0.0:
+    if delta<=0.0:
         same_day_strategy.append(0)
     else:
         same_day_strategy.append(1)
 
 #add a new column in the data frame with binary classifier of the day delta
 df["same_day_strategy"] = same_day_strategy
+
+
+#walk through all the next_close_delta values to check if they are positive or not
+for delta in df["next_close_delta"]:
+    if delta<=0.1:
+        next_close_strategy.append(0)
+    else:
+        next_close_strategy.append(1)
+
+#add a new column in the data frame with binary classifier of the day delta
+df["next_close_strategy"] = next_close_strategy
 
 #Write DateFrame back as csv file
 df.to_csv(csv_file_o, index=False)
