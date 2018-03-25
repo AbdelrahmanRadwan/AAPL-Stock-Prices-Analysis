@@ -1,12 +1,14 @@
+''''
+Preprocessing on the AAPL file to generate more columns and add them to 
+the DataSet folder.
+'''
 from dateutil import parser
 import pandas as pd
-import numpy as np
 import math
-import csv
 
 #paths of the dataset and the meta data...
-csv_file_o = "/home/radwan/Desktop/AAPL Stock Prices Analysis/DataSet/Dataset.csv"
-csv_file_i = "/home/radwan/Desktop/AAPL Stock Prices Analysis/Meta Data/AAPL.csv"
+csv_file_o = "../DataSet/Dataset.csv"
+csv_file_i = "../Meta Data/AAPL.csv"
 
 #load the input in a data frame
 df = pd.read_csv(csv_file_i)
