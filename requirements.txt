@@ -1,0 +1,2 @@
+pandas==0.19.2
+python_dateutil==2.7.1
