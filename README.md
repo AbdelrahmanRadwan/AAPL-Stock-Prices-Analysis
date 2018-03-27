@@ -31,4 +31,5 @@ Jupiter notebook includes visualizations and histograms of data.
 
 **Models used:**
 
-* Gaussian Naive Bayes (GNB) classifier
+* Gaussian Naive Bayes (GNB) classifier with 0.963942307692 Accuracy
+
