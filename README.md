@@ -20,3 +20,15 @@ It gives you analytics table.
 **Visualization**
 
 Jupiter notebook includes visualizations and histograms of data.
+
+***Machine Learning Models***
+
+* **Predicting Same Day Strategy:**
+
+**Features used:**
+
+* Same Day Delta; because it's the only moderator for it
+
+**Models used:**
+
+* Gaussian Naive Bayes (GNB) classifier
