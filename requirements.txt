@@ -1,2 +1,4 @@
 pandas==0.19.2
-python_dateutil==2.7.1
+numpy==1.12.1
+python_dateutil==2.7.2
+scikit_learn==0.19.1
