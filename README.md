@@ -23,13 +23,29 @@ Jupiter notebook includes visualizations and histograms of data.
 
 ***Machine Learning Models***
 
-* **Predicting Same Day Strategy:**
+* **1. Predicting Same Day Strategy:**
 
-**Features used:**
+    * **Features used:**
 
-* Same Day Delta; because it's the only moderator for it
+        * Same Day Delta; because it's the only moderator for it
 
-**Models used:**
+    * **Models used:**
 
-* Gaussian Naive Bayes (GNB) classifier with 0.963942307692 Accuracy
+        * Gaussian Naive Bayes (GNB) classifier.
 
+    * **Accuracy:**
+         * 0.963942307692 Accuracy
+
+
+* **2. Predicting Next Close Strategy:**
+
+    * **Features used:**
+
+        * Next Close Delta; because it's the only moderator for it
+
+    * **Models used:**
+
+        * Gaussian Naive Bayes (GNB) classifier.
+
+    * **Accuracy:**
+         * 0.980769230769 Accuracy
