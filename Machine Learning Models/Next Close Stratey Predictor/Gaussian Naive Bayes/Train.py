@@ -13,10 +13,21 @@ label_names = [0, 1]
 feature_names = ["next_close_delta"]
 #The labels (targets)...
 labels = np.array(df['next_close_strategy'])
+
+#Adding new feature to the data frame
+df["privious_day_next_close_delta"] = 1
+for i in range(1, len(df)):
+    temp = df["next_close_delta"][i - 1]
+    df.loc[i, "privious_day_next_close_delta"] = temp
+
 #The features (Input)...
-features = np.array(df['next_close_delta'])
+features = df.filter(items=['Open', 'Close', "High", "Low", "Adj Close", "Volume", "privious_day_next_close_delta"])
+
+
+features = np.array(features)
+
 # Re-shape the features vector so we can do multiplications
-features = features.reshape((len(features),1))
+#features = features.reshape((len(features),1))
 
 
 # Split our data to be 33% testing - the rest for training
