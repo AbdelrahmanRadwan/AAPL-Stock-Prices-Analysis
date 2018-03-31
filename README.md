@@ -27,14 +27,14 @@ Jupiter notebook includes visualizations and histograms of data.
 
     * **Features used:**
 
-        * Same Day Delta; because it's the only moderator for it
+        * 'Open', 'Close', "High", "Low", "Adj Close", "Volume" and "privious_day_same_day_delta"
 
     * **Models used:**
 
         * Gaussian Naive Bayes (GNB) classifier.
 
     * **Accuracy:**
-         * 0.963942307692 Accuracy
+         * 0.507211538462 Accuracy
 
 
 * **2. Predicting Next Close Strategy:**
