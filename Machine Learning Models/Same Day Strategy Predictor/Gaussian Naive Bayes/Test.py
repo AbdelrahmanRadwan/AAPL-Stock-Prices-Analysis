@@ -2,7 +2,6 @@ from sklearn.model_selection import train_test_split
 import pandas as pd
 import numpy as np
 import pickle
-from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score
 
 
@@ -10,7 +9,6 @@ csv_file_i = "../../../DataSet/Dataset.csv"
 df = pd.read_csv(csv_file_i)
 
 label_names = [0, 1]
-feature_names = ["same_day_delta"]
 #The labels (targets)...
 labels = np.array(df['same_day_strategy'])
 #The features (Input)...
