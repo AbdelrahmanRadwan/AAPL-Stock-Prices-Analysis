@@ -6,17 +6,25 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score
 
 
-csv_file_i = "../../DataSet/Dataset.csv"
+csv_file_i = "../../../DataSet/Dataset.csv"
 df = pd.read_csv(csv_file_i)
 
-label_names = [0, 1]
-feature_names = ["same_day_delta"]
+
 #The labels (targets)...
 labels = np.array(df['same_day_strategy'])
+
+#Adding new feature to the data frame
+df["privious_day_same_day_delta"] = 1
+for i in range(1, len(df)):
+    temp = df["same_day_delta"][i - 1]
+    df.loc[i, "privious_day_same_day_delta"] = temp
+
 #The features (Input)...
-features = np.array(df['same_day_delta'])
-# Re-shape the features vector so we can do multiplications
-features = features.reshape((len(features),1))
+
+features = df.filter(items=['Open', 'Close', "High", "Low", "Adj Close", "Volume", "privious_day_same_day_delta"])
+
+features = np.array(features)
+
 
 
 # Split our data to be 33% testing - the rest for training
